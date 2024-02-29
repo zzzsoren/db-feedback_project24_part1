@@ -1,76 +1,48 @@
 CREATE TABLE PRODUCT(
-	PoductID INT PRIMARY KEY,
+	ProductID INT PRIMARY KEY,
 	CategoryID INT,
-	Poductname VARCHAR(20),
-	Description VARCHAR(20)
-
-);
-SELECT * FROM PRODUCT;
-
-
+	Productname VARCHAR(20),
+	Description VARCHAR(50));
 
 CREATE TABLE PRODUCT_CATEGORY(
 	CategoryID INT PRIMARY KEY,
 	Name VARCHAR(20),
-	description VARCHAR(20)
-	);
+	Description VARCHAR(50));
 
-
-
-CREATE TABLE Supplier(
-	SupplierVAT int,
-	suppliername VARCHAR(20),
-	Address VArchar(20),
-	phone INT,
-	Email Varchar(30)
-	
-);
-
-	
-)
-
-CREATE TABLE Supply(
-	invoiceID INT
+CREATE TABLE SUPPLIER(
 	SupplierVAT INT,
-	date Varchar(20)
-	);
+	SupplierName VARCHAR(20),
+	Address VARCHAR(20),
+	Phone INT,
+	Email VARCHAR(50));
 
-CREATE TABLE product_supply(
-	invoiceID Int,
+CREATE TABLE SUPPLY(
+	InvoiceID INT
+	SupplierVAT INT,
+	Date VARCHAR(20));
+
+CREATE TABLE PRODUCT_SUPPLY(
+	InvoiceID INT,
 	ProductID INT,
 	Quantity INT,
-	value double);
+	Value DOUBLE);
 
-CREATE TABLE Sale(
+CREATE TABLE SALE(
 	SaleID INT,
-	date varchar(20);
+	Date VARCHAR(20));
 
-CREATE TABLE sale_of_product(
+CREATE TABLE SALE_OF_PRODUCT(
 	SaleID INT,
 	ProductID INT,
 	Quantity INT,
-	value INT);
+	Value INT);
 
-CREATE TABLE Product_return(
+CREATE TABLE PRODUCT_RETURN(
 	SaleID INT,
 	ProductID INT
-	date VARCHAR(20),
+	Date VARCHAR(20),
 	Quantity INT);
 
-CREATE TABLE Stock(
+CREATE TABLE STOCK(
 	ProductID INT,
 	Quantity INT);
-
-
-
-	
-
-
-	
-	
-	
-	
-
-
-
-DROP TABLE product;
