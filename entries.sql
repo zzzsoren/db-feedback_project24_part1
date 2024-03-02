@@ -11,6 +11,19 @@ INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
 (10, 10, 'Dyson V11 Absolute', 'Cord-free vacuum cleaner');
 
 
+INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
+(1, 'Smartphones', 'Handheld mobile devices'),
+(2, 'Laptops', 'Portable computers'),
+(3, 'Tablets', 'Touchscreen mobile devices'),
+(4, 'Wearables', 'Wearable technology'),
+(5, 'Audio', 'Audio equipment including headphones, speakers, soundbars, and music players'),
+(6, 'Cameras', 'Digital cameras, camcorders, drones, and photography accessories'),
+(7, 'Gaming', 'Gaming consoles, video games, gaming accessories, and VR equipment'),
+(8, 'Networking', 'Networking devices including routers, modems, extenders, and networking accessories'),
+(9, 'Accessories', 'Electronic accessories including cables, chargers, cases, and power banks'),
+(10, 'Home Appliances', 'Small and large electronic home appliances for kitchen, cleaning, and home comfort');
+
+
 INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
 (200001, 'Samsung Electronics', 'Samsung Town, Seoul', '11111111', 'contact@samsung.com'),
 (200002, 'ASUS Global', 'ASUS Blvd, Taipei', '22222222', 'support@asus.com'),
