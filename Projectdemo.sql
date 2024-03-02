@@ -2,21 +2,21 @@
 CREATE TABLE PRODUCT(
 	ProductID INT PRIMARY KEY,
 	CategoryID INT,
-	Productname VARCHAR(20),
-	Description VARCHAR(50),
+	Productname VARCHAR(100),
+	Description VARCHAR(100),
 	FOREIGN KEY (CategoryID) REFERENCES PRODUCT_CATEGORY);
 -- 
 CREATE TABLE PRODUCT_CATEGORY(
 	CategoryID INT PRIMARY KEY,
-	Name VARCHAR(20),
-	Description VARCHAR(50));
+	Name VARCHAR(100),
+	Description VARCHAR(100));
 -- 
 CREATE TABLE SUPPLIER(
 	SupplierVAT INT PRIMARY KEY,
-	SupplierName VARCHAR(20),
-	Address VARCHAR(20),
+	SupplierName VARCHAR(100),
+	Address VARCHAR(100),
 	Phone INT,
-	Email VARCHAR(50));
+	Email VARCHAR(100));
 -- 
 CREATE TABLE SUPPLY(
 	InvoiceID INT PRIMARY KEY,

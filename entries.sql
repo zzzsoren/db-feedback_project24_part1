@@ -10,7 +10,6 @@ INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
 (9, 9, 'Anker PowerCore 10000', 'Portable charger with 10000mAh capacity'),
 (10, 10, 'Dyson V11 Absolute', 'Cord-free vacuum cleaner');
 
-
 INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 (1, 'Smartphones', 'Handheld mobile devices'),
 (2, 'Laptops', 'Portable computers'),
@@ -22,7 +21,6 @@ INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 (8, 'Networking', 'Networking devices including routers, modems, extenders, and networking accessories'),
 (9, 'Accessories', 'Electronic accessories including cables, chargers, cases, and power banks'),
 (10, 'Home Appliances', 'Small and large electronic home appliances for kitchen, cleaning, and home comfort');
-
 
 INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
 (200001, 'Samsung Electronics', 'Samsung Town, Seoul', '11111111', 'contact@samsung.com'),
