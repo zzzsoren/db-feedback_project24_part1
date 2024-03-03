@@ -3,9 +3,8 @@ INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 (1, 'Smartphones', 'handheld mobile devices'),
 (2, 'Laptops', 'portable computers'),
 (3, 'Tablets', 'touchscreen mobile devices'),
-(4, 'Wearables', 'wearable technology'),
 (5, 'Audio', 'audio equipment'),
-(6, 'Cameras', 'digital cameras and photography accessories'),
+(6, 'Cameras', 'cameras and photo accessories'),
 (7, 'Gaming', 'consoles, games, accessories, and VR'),
 (8, 'Networking', 'networking devices'),
 (9, 'Accessories', 'electronic accessories'),
@@ -17,7 +16,7 @@ INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
 (11, 1, 'Iphone 13', '128gb midnight'),
 (2, 2, 'ASUS ROG Strix G16', 'i914900hx, rtx4080, 32gbddr5ram'),
 (3, 3, 'iPad Pro 12.9', 'liquid retina xdr-skærm, m2-chip octa-core'),
-(4, 4, 'Garmin Fenix 7X', 'titanium solar smartwatch'),
+(4, 9, 'Garmin Fenix 7X', 'titanium solar smartwatch'),
 (5, 5, 'Sony WH-1000XM4', 'nc headphones'),
 (6, 6, 'Canon EOS', '8K video recording'),
 (7, 7, 'Nintendo Switch', 'portable gaming console'),
@@ -79,7 +78,6 @@ INSERT INTO SALE (SaleID, Date) VALUES
 (2009, '2023-02-17'),
 (2010, '2023-02-19');
 
--- varierende kvantiteter og værdier.
 INSERT INTO SALE_OF_PRODUCT (SaleID, ProductID, Quantity, Value) VALUES
 (2001, 1, 2, 2000),
 (2002, 2, 1, 2000),
@@ -99,16 +97,3 @@ INSERT INTO PRODUCT_RETURN (SaleID, ProductID, Date, Quantity) VALUES
 (2005, 5, '2023-02-10', 2),
 (2007, 7, '2023-02-14', 1),
 (2009, 9, '2023-02-18', 2);
-
--- Initial lagerbeholdning baseret på indkøb minus salg og returneringer.
-INSERT INTO STOCK (ProductID, Quantity) VALUES
-(1, 49),
-(2, 29),
-(3, 37),
-(4, 58),
-(5, 67),
-(6, 24),
-(7, 44),
-(8, 33),
-(9, 76),
-(10, 19);
