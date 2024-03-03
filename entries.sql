@@ -14,7 +14,7 @@ INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 -- Derefter produkter
 INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
 (1, 1, 'Samsung Galaxy S23', '8/256gb (black)'),
-(11, 1, 'Iphone 13', '128gb midnight')
+(11, 1, 'Iphone 13', '128gb midnight'),
 (2, 2, 'ASUS ROG Strix G16', 'i914900hx, rtx4080, 32gbddr5ram'),
 (3, 3, 'iPad Pro 12.9', 'liquid retina xdr-skærm, m2-chip octa-core'),
 (4, 4, 'Garmin Fenix 7X', 'titanium solar smartwatch'),
