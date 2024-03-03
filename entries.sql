@@ -1,29 +1,29 @@
 -- Indsæt først kategorier
 INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
-(1, 'Smartphones', 'Handheld mobile devices'),
-(2, 'Laptops', 'Portable computers'),
-(3, 'Tablets', 'Touchscreen mobile devices'),
-(4, 'Wearables', 'Wearable technology'),
-(5, 'Audio', 'Audio equipment'),
-(6, 'Cameras', 'Digital cameras and photography accessories'),
-(7, 'Gaming', 'Gaming consoles, video games, gaming accessories, and VR equipment'),
-(8, 'Networking', 'Networking devices'),
-(9, 'Accessories', 'Electronic accessories including cables, chargers, cases, and power banks'),
-(10, 'Home Appliances', 'Home appliances for kitchen, cleaning, and home comfort');
+(1, 'Smartphones', 'handheld mobile devices'),
+(2, 'Laptops', 'portable computers'),
+(3, 'Tablets', 'touchscreen mobile devices'),
+(4, 'Wearables', 'wearable technology'),
+(5, 'Audio', 'audio equipment'),
+(6, 'Cameras', 'digital cameras and photography accessories'),
+(7, 'Gaming', 'consoles, games, accessories, and VR'),
+(8, 'Networking', 'networking devices'),
+(9, 'Accessories', 'electronic accessories'),
+(10, 'Home', 'everything for you home');
 
 -- Derefter produkter
 INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
-(1, 1, 'Samsung Galaxy S23', '8/256GB (black)'),
-(11, 1, 'Iphone 13', '128GB Midnight')
-(2, 2, 'ASUS ROG Strix G16', 'I914900HX, RTX 4080, 32 GB DDR5 RAM'),
-(3, 3, 'iPad Pro 12.9', 'Liquid Retina XDR-skærm, M2-chip octa-core'),
-(4, 4, 'Garmin Fenix 7X', 'Titanium Solar smartwatch'),
-(5, 5, 'Sony WH-1000XM4', 'NC headphones'),
+(1, 1, 'Samsung Galaxy S23', '8/256gb (black)'),
+(11, 1, 'Iphone 13', '128gb midnight')
+(2, 2, 'ASUS ROG Strix G16', 'i914900hx, rtx4080, 32gbddr5ram'),
+(3, 3, 'iPad Pro 12.9', 'liquid retina xdr-skærm, m2-chip octa-core'),
+(4, 4, 'Garmin Fenix 7X', 'titanium solar smartwatch'),
+(5, 5, 'Sony WH-1000XM4', 'nc headphones'),
 (6, 6, 'Canon EOS', '8K video recording'),
-(7, 7, 'Nintendo Switch', 'Portable gaming console'),
-(8, 8, 'Netgear Nighthawk', 'Wi-Fi 6 router'),
-(9, 9, 'Anker PowerCore', 'Powerbank with 10000mAh capacity'),
-(10, 10, 'Dyson V11', 'Cordfree vacuum cleaner');
+(7, 7, 'Nintendo Switch', 'portable gaming console'),
+(8, 8, 'Netgear Nighthawk', 'wi-fi 6 router'),
+(9, 9, 'Anker PowerCore', 'poowerbank 10000mah capacity'),
+(10, 10, 'Dyson V11', 'cordfree vacuum cleaner');
 
 -- Indsæt først levenrandør
 INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
@@ -35,7 +35,7 @@ INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
 (200006, 'Canon Inc.', 'Canon Towers', '66666666', 'contact@canon.com'),
 (200007, 'Nintendo Co., Ltd.', 'Nintendo HQ', '77777777', 'support@nintendo.com'),
 (200008, 'Netgear, Inc.', 'Netgear Way', '88888888', 'help@netgear.com'),
-(200009, 'Anker Innovations', 'Anker St, Shenzhen', '99999999', 'support@anker.com'),
+(200009, 'Anker Innovations', 'Anker St', '99999999', 'support@anker.com'),
 (200010, 'Dyson Ltd.', 'Dyson Campus', '00000000', 'contact@dyson.com');
 
 -- Derefter leveranser
@@ -52,7 +52,7 @@ INSERT INTO SUPPLY (InvoiceID, SupplierVAT, Date) VALUES
 (1009, 200009, '2023-01-09'),
 (1010, 200010, '2023-01-10');
 
--- Antager at kvantiteten og værdien varierer baseret på produkttypen.
+-- værdien varierer baseret på produkttypen.
 -- Indsæt efter product og supply.
 INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
 (1001, 1, 100, 50000),
@@ -66,8 +66,7 @@ INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
 (1009, 9, 150, 15000),
 (1010, 10, 70, 35000);
 
-
--- Antager at salgsdatoerne er spredt ud over februar 2023.
+-- februar 2023.
 INSERT INTO SALE (SaleID, Date) VALUES
 (2001, '2023-02-01'),
 (2002, '2023-02-03'),
@@ -80,8 +79,7 @@ INSERT INTO SALE (SaleID, Date) VALUES
 (2009, '2023-02-17'),
 (2010, '2023-02-19');
 
--- Antager at hver salg omfatter varierende kvantiteter og værdier.
--- 
+-- varierende kvantiteter og værdier.
 INSERT INTO SALE_OF_PRODUCT (SaleID, ProductID, Quantity, Value) VALUES
 (2001, 1, 2, 2000),
 (2002, 2, 1, 2000),
@@ -94,7 +92,7 @@ INSERT INTO SALE_OF_PRODUCT (SaleID, ProductID, Quantity, Value) VALUES
 (2009, 9, 3, 450),
 (2010, 10, 1, 3500);
 
--- Antager at nogle produkter returneres efter køb.
+-- nogle produkter returneres efter køb.
 INSERT INTO PRODUCT_RETURN (SaleID, ProductID, Date, Quantity) VALUES
 (2001, 1, '2023-02-02', 1),
 (2003, 3, '2023-02-06', 1),
