@@ -1,40 +1,45 @@
-INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
-(1, 1, 'Samsung Galaxy S21', '5G smartphone'),
-(2, 2, 'ASUS ROG Zephyrus G14', 'Gaming laptop with Ryzen 9'),
-(3, 3, 'Apple iPad Air', '10.9-inch Liquid Retina display'),
-(4, 4, 'Garmin Forerunner 245', 'With Advanced training features'),
-(5, 5, 'Sony WH-1000XM4', 'Wireless noise-cancelling headphones'),
-(6, 6, 'Canon EOS R5', 'Camera with 8K video recording'),
-(7, 7, 'Nintendo Switch', 'Portable gaming console'),
-(8, 8, 'Netgear Nighthawk AX8', 'Wi-Fi 6 router'),
-(9, 9, 'Anker PowerCore 10000', 'Portable charger with 10000mAh capacity'),
-(10, 10, 'Dyson V11 Absolute', 'Cord-free vacuum cleaner');
-
+-- Indsæt først kategorier
 INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 (1, 'Smartphones', 'Handheld mobile devices'),
 (2, 'Laptops', 'Portable computers'),
 (3, 'Tablets', 'Touchscreen mobile devices'),
 (4, 'Wearables', 'Wearable technology'),
-(5, 'Audio', 'Audio equipment including headphones, speakers, soundbars, and music players'),
-(6, 'Cameras', 'Digital cameras, camcorders, drones, and photography accessories'),
+(5, 'Audio', 'Audio equipment'),
+(6, 'Cameras', 'Digital cameras and photography accessories'),
 (7, 'Gaming', 'Gaming consoles, video games, gaming accessories, and VR equipment'),
-(8, 'Networking', 'Networking devices including routers, modems, extenders, and networking accessories'),
+(8, 'Networking', 'Networking devices'),
 (9, 'Accessories', 'Electronic accessories including cables, chargers, cases, and power banks'),
-(10, 'Home Appliances', 'Small and large electronic home appliances for kitchen, cleaning, and home comfort');
+(10, 'Home Appliances', 'Home appliances for kitchen, cleaning, and home comfort');
 
+-- Derefter produkter
+INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
+(1, 1, 'Samsung Galaxy S23', '8/256GB (black)'),
+(11, 1, 'Iphone 13', '128GB Midnight')
+(2, 2, 'ASUS ROG Strix G16', 'I914900HX, RTX 4080, 32 GB DDR5 RAM'),
+(3, 3, 'iPad Pro 12.9', 'Liquid Retina XDR-skærm, M2-chip octa-core'),
+(4, 4, 'Garmin Fenix 7X', 'Titanium Solar smartwatch'),
+(5, 5, 'Sony WH-1000XM4', 'NC headphones'),
+(6, 6, 'Canon EOS', '8K video recording'),
+(7, 7, 'Nintendo Switch', 'Portable gaming console'),
+(8, 8, 'Netgear Nighthawk', 'Wi-Fi 6 router'),
+(9, 9, 'Anker PowerCore', 'Powerbank with 10000mAh capacity'),
+(10, 10, 'Dyson V11', 'Cordfree vacuum cleaner');
+
+-- Indsæt først levenrandør
 INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
-(200001, 'Samsung Electronics', 'Samsung Town, Seoul', '11111111', 'contact@samsung.com'),
-(200002, 'ASUS Global', 'ASUS Blvd, Taipei', '22222222', 'support@asus.com'),
-(200003, 'Apple Inc.', '1 Apple Park Way, Cupertino', '33333333', 'help@apple.com'),
-(200004, 'Garmin Ltd.', 'Garmin HQ, Olathe', '44444444', 'service@garmin.com'),
-(200005, 'Sony Corporation', 'Sony City, Tokyo', '55555555', 'info@sony.com'),
-(200006, 'Canon Inc.', 'Canon Towers, Tokyo', '66666666', 'contact@canon.com'),
-(200007, 'Nintendo Co., Ltd.', 'Nintendo HQ, Kyoto', '77777777', 'support@nintendo.com'),
-(200008, 'Netgear, Inc.', 'Netgear Way, San Jose', '88888888', 'help@netgear.com'),
+(200001, 'Samsung Electronics', 'Samsung Town', '11111111', 'contact@samsung.com'),
+(200002, 'ASUS Global', 'ASUS Blvd', '22222222', 'support@asus.com'),
+(200003, 'Apple Inc.', 'Apple Park Way, Cupertino', '33333333', 'help@apple.com'),
+(200004, 'Garmin Ltd.', 'Garmin HQ', '44444444', 'service@garmin.com'),
+(200005, 'Sony Corporation', 'Sony City', '55555555', 'info@sony.com'),
+(200006, 'Canon Inc.', 'Canon Towers', '66666666', 'contact@canon.com'),
+(200007, 'Nintendo Co., Ltd.', 'Nintendo HQ', '77777777', 'support@nintendo.com'),
+(200008, 'Netgear, Inc.', 'Netgear Way', '88888888', 'help@netgear.com'),
 (200009, 'Anker Innovations', 'Anker St, Shenzhen', '99999999', 'support@anker.com'),
-(200010, 'Dyson Ltd.', 'Dyson Campus, Malmesbury', '00000000', 'contact@dyson.com');
+(200010, 'Dyson Ltd.', 'Dyson Campus', '00000000', 'contact@dyson.com');
 
--- Antager at datoen afspejler leverancer over de første 10 dage af 2023.
+-- Derefter leveranser
+-- De første 10 dage af 2023.
 INSERT INTO SUPPLY (InvoiceID, SupplierVAT, Date) VALUES
 (1001, 200001, '2023-01-01'),
 (1002, 200002, '2023-01-02'),
@@ -48,6 +53,7 @@ INSERT INTO SUPPLY (InvoiceID, SupplierVAT, Date) VALUES
 (1010, 200010, '2023-01-10');
 
 -- Antager at kvantiteten og værdien varierer baseret på produkttypen.
+-- Indsæt efter product og supply.
 INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
 (1001, 1, 100, 50000),
 (1002, 2, 50, 80000),
@@ -75,6 +81,7 @@ INSERT INTO SALE (SaleID, Date) VALUES
 (2010, '2023-02-19');
 
 -- Antager at hver salg omfatter varierende kvantiteter og værdier.
+-- 
 INSERT INTO SALE_OF_PRODUCT (SaleID, ProductID, Quantity, Value) VALUES
 (2001, 1, 2, 2000),
 (2002, 2, 1, 2000),
