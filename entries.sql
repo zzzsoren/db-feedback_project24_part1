@@ -1,3 +1,4 @@
+-- INSERT INTO PRODUCT_RETURN (SaleID, ProductID, Date, Quantity) VALUES
 -- Indsæt først kategorier
 INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 (1, 'Phones', 'phones anď phone accesories'),
@@ -25,7 +26,6 @@ INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
 (20, 3, 'iPad Air', 'liquid retine xdr'),
 (21, 3, 'Samsung Galaxy S9', '128gb'),
 (22, 3, 'Lenovo P12', '128gb'),
-(4, 9, 'Garmin Fenix 7X', 'titanium solar smartwatch'),
 (5, 5, 'Sony WH-1000XM4', 'on-ear nc headphones'),
 (23 , 5, 'Sony WF-1000XM5', 'in-ear nc headphones'),
 (24, 5, 'Bose Noice Canceling 700', 'on-ear nc headphones'),
@@ -79,13 +79,10 @@ INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
 (1001, 1, 100, 50000),
 (1002, 2, 50, 80000),
 (1003, 3, 75, 40000),
-(1004, 4, 80, 24000),
 (1005, 5, 120, 30000),
 (1006, 6, 60, 60000),
 (1007, 7, 200, 50000),
 (1008, 8, 90, 20000),
-(1009, 9, 150, 15000),
-(1010, 10, 70, 35000),
 (1011, 1, 100, 700),
 (1012, 11, 50, 800),
 (1013, 5, 75, 350),
@@ -93,7 +90,6 @@ INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
 (1015, 23, 50, 200),
 (1016, 16, 40, 1200),
 (1017, 2, 60, 1500),
-(1018, 4, 30, 800),
 (1019, 6, 80, 1000),
 (1020, 8, 90, 500);
 
@@ -120,9 +116,5 @@ INSERT INTO SALE_OF_PRODUCT (SaleID, ProductID, Quantity, Value) VALUES
 (3006, 16, 10, 12000),
 (3007, 14, 8, 9600),
 (3008, 11, 15, 12000),
-(3009, 4, 5, 4000),
 (3010, 6, 25, 25000),
 (3011, 8, 35, 17500);
-
--- nogle produkter returneres efter køb.
--- INSERT INTO PRODUCT_RETURN (SaleID, ProductID, Date, Quantity) VALUES
