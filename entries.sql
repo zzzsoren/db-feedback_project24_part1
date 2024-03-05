@@ -6,9 +6,7 @@ INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 (5, 'Audio and Picture', 'sound equipment, and picture equipment'),
 (6, 'Photo', 'cameras and photo accessories'),
 (7, 'Gaming', 'consoles, games, and VR'),
-(8, 'Networking', 'notworking devices'),
-(9, 'Accessories', 'electronic accessories'),
-(10, 'Home', 'everything else for your home');
+(8, 'Networking', 'notworking devices');
 
 -- Derefter produkter
 INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
@@ -35,9 +33,7 @@ INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
 (7, 7, 'Nintendo Switch', 'portable gaming console'),
 (25, 7, 'Xbox Elite Series 2', 'xbox controller'),
 (26, 7, 'Razer Cobra Pro', 'wireless gaming mouse'),
-(8, 8, 'Netgear Nighthawk', 'wi-fi 6 router'),
-(9, 9, 'Anker PowerCore', 'poowerbank 10000mah capacity'),
-(10, 10, 'Dyson V11', 'cordfree vacuum cleaner');
+(8, 8, 'Netgear Nighthawk', 'wi-fi 6 router');
 
 -- Indsæt først levenrandør
 INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
@@ -55,20 +51,29 @@ INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
 (200012, 'Bose Inc', 'Bose Boulevard', '11113333', 'help@bose.com');
 
 -- Derefter leveranser
--- De første 10 dage af 2023.
 INSERT INTO SUPPLY (InvoiceID, SupplierVAT, Date) VALUES
-(1001, 200001, '2023-01-01'),
-(1002, 200002, '2023-01-02'),
-(1003, 200003, '2023-01-03'),
-(1004, 200004, '2023-01-04'),
-(1005, 200005, '2023-01-05'),
-(1006, 200006, '2023-01-06'),
-(1007, 200007, '2023-01-07'),
-(1008, 200008, '2023-01-08'),
-(1009, 200009, '2023-01-09'),
-(1010, 200010, '2023-01-10');
+(1001, 200001, '2022-01-01'),
+(1002, 200002, '2022-01-02'),
+(1003, 200003, '2022-01-03'),
+(1004, 200004, '2022-01-04'),
+(1005, 200005, '2022-01-05'),
+(1006, 200006, '2022-01-06'),
+(1007, 200007, '2022-01-07'),
+(1008, 200008, '2022-01-08'),
+(1009, 200009, '2022-01-09'),
+(1010, 200010, '2022-01-10'),
+(1011, 200001, '2022-03-01'),
+(1012, 200003, '2022-04-01'),
+(1013, 200005, '2022-05-01'),
+(1014, 200007, '2022-06-01'),
+(1015, 200009, '2022-07-01'),
+(1016, 200011, '2022-08-01'),
+(1017, 200002, '2022-09-01'),
+(1018, 200004, '2022-10-01'),
+(1019, 200006, '2022-11-01'),
+(1020, 200008, '2022-12-01');
 
--- værdien varierer baseret på produkttypen.
+-- lager leveranser
 -- Indsæt efter product og supply.
 INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
 (1001, 1, 100, 50000),
@@ -80,37 +85,44 @@ INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
 (1007, 7, 200, 50000),
 (1008, 8, 90, 20000),
 (1009, 9, 150, 15000),
-(1010, 10, 70, 35000);
+(1010, 10, 70, 35000),
+(1011, 1, 100, 700),
+(1012, 11, 50, 800),
+(1013, 5, 75, 350),
+(1014, 7, 100, 300),
+(1015, 23, 50, 200),
+(1016, 16, 40, 1200),
+(1017, 2, 60, 1500),
+(1018, 4, 30, 800),
+(1019, 6, 80, 1000),
+(1020, 8, 90, 500);
 
 -- februar 2023.
 INSERT INTO SALE (SaleID, Date) VALUES
-(2001, '2023-02-01'),
-(2002, '2023-02-03'),
-(2003, '2023-02-05'),
-(2004, '2023-02-07'),
-(2005, '2023-02-09'),
-(2006, '2023-02-11'),
-(2007, '2023-02-13'),
-(2008, '2023-02-15'),
-(2009, '2023-02-17'),
-(2010, '2023-02-19');
+(3001, '2022-02-14'),
+(3002, '2022-03-17'),
+(3003, '2022-04-30'),
+(3004, '2022-05-29'),
+(3005, '2022-06-18'),
+(3006, '2022-07-22'),
+(3007, '2022-08-15'),
+(3008, '2022-09-05'),
+(3009, '2022-10-31'),
+(3010, '2022-11-25'),
+(3011, '2022-12-20');
 
 INSERT INTO SALE_OF_PRODUCT (SaleID, ProductID, Quantity, Value) VALUES
-(2001, 1, 2, 2000),
-(2002, 2, 1, 2000),
-(2003, 3, 3, 3000),
-(2004, 4, 2, 1000),
-(2005, 5, 4, 1200),
-(2006, 6, 1, 10000),
-(2007, 7, 2, 5000),
-(2008, 8, 1, 1000),
-(2009, 9, 3, 450),
-(2010, 10, 1, 3500);
+(3001, 1, 20, 14000),
+(3002, 2, 15, 22500),
+(3003, 5, 25, 8750),
+(3004, 7, 30, 9000),
+(3005, 23, 20, 4000),
+(3006, 16, 10, 12000),
+(3007, 14, 8, 9600),
+(3008, 11, 15, 12000),
+(3009, 4, 5, 4000),
+(3010, 6, 25, 25000),
+(3011, 8, 35, 17500);
 
 -- nogle produkter returneres efter køb.
-INSERT INTO PRODUCT_RETURN (SaleID, ProductID, Date, Quantity) VALUES
-(2001, 1, '2023-02-02', 1),
-(2003, 3, '2023-02-06', 1),
-(2005, 5, '2023-02-10', 2),
-(2007, 7, '2023-02-14', 1),
-(2009, 9, '2023-02-18', 2);
+-- INSERT INTO PRODUCT_RETURN (SaleID, ProductID, Date, Quantity) VALUES
