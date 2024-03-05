@@ -1,25 +1,40 @@
 -- Indsæt først kategorier
 INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
-(1, 'Smartphones', 'handheld mobile devices'),
-(2, 'Laptops', 'portable computers'),
-(3, 'Tablets', 'touchscreen mobile devices'),
-(5, 'Audio', 'audio equipment'),
-(6, 'Cameras', 'cameras and photo accessories'),
-(7, 'Gaming', 'consoles, games, accessories, and VR'),
-(8, 'Networking', 'networking devices'),
+(1, 'Phones', 'phones anď phone accesories'),
+(2, 'Laptops', 'laptops to take work with you on the go'),
+(3, 'Tablets', 'who uses this shet. artists?'),
+(5, 'Audio and Picture', 'sound equipment, and picture equipment'),
+(6, 'Photo', 'cameras and photo accessories'),
+(7, 'Gaming', 'consoles, games, and VR'),
+(8, 'Networking', 'notworking devices'),
 (9, 'Accessories', 'electronic accessories'),
-(10, 'Home', 'everything for you home');
+(10, 'Home', 'everything else for your home');
 
 -- Derefter produkter
 INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
-(1, 1, 'Samsung Galaxy S23', '8/256gb (black)'),
-(11, 1, 'Iphone 13', '128gb midnight'),
-(2, 2, 'ASUS ROG Strix G16', 'i914900hx, rtx4080, 32gbddr5ram'),
-(3, 3, 'iPad Pro 12.9', 'liquid retina xdr-skærm, m2-chip octa-core'),
+(1, 1, 'Samsung Galaxy S23', '256gb)'),
+(11, 1, 'Apple iPhone 13', '128gb'),
+(12, 1, 'Apple iPhone 15', '256gb'),
+(13, 1, 'Apple iPhone 15 Pro', '256gb'),
+(14, 1, 'Samsung Galaxy S24 Ultra', '512gb'),
+(15, 1, 'Samsung Galaxy A54', '128gb'),
+(2, 2, 'ASUS ROG Strix G16', 'rtx4080'),
+(16, 2, 'Apple MacBook Pro', 'M3 Pro'),
+(17, 2, 'Lenovo Legion Pro 7', 'rtx4090'),
+(18, 2, 'Lenovo Ideapad 5', 'rtx4070'),
+(19, 2, 'Apple MacBook Air', 'M2'),
+(3, 3, 'iPad Pro', 'liquid retina xdr'),
+(20, 3, 'iPad Air', 'liquid retine xdr'),
+(21, 3, 'Samsung Galaxy S9', '128gb'),
+(22, 3, 'Lenovo P12', '128gb'),
 (4, 9, 'Garmin Fenix 7X', 'titanium solar smartwatch'),
-(5, 5, 'Sony WH-1000XM4', 'nc headphones'),
-(6, 6, 'Canon EOS', '8K video recording'),
+(5, 5, 'Sony WH-1000XM4', 'on-ear nc headphones'),
+(23 , 5, 'Sony WF-1000XM5', 'in-ear nc headphones'),
+(24, 5, 'Bose Noice Canceling 700', 'on-ear nc headphones'),
+(6, 6, 'Canon EOS', '8k recording'),
 (7, 7, 'Nintendo Switch', 'portable gaming console'),
+(25, 7, 'Xbox Elite Series 2', 'xbox controller'),
+(26, 7, 'Razer Cobra Pro', 'wireless gaming mouse'),
 (8, 8, 'Netgear Nighthawk', 'wi-fi 6 router'),
 (9, 9, 'Anker PowerCore', 'poowerbank 10000mah capacity'),
 (10, 10, 'Dyson V11', 'cordfree vacuum cleaner');
@@ -35,7 +50,9 @@ INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
 (200007, 'Nintendo Co., Ltd.', 'Nintendo HQ', '77777777', 'support@nintendo.com'),
 (200008, 'Netgear, Inc.', 'Netgear Way', '88888888', 'help@netgear.com'),
 (200009, 'Anker Innovations', 'Anker St', '99999999', 'support@anker.com'),
-(200010, 'Dyson Ltd.', 'Dyson Campus', '00000000', 'contact@dyson.com');
+(200010, 'Dyson Ltd.', 'Dyson Campus', '00000000', 'contact@dyson.com'),
+(200011, 'Lenovo Inc', 'Lenovo Way', '11112222', 'message@lenovo.com'),
+(200012, 'Bose Inc', 'Bose Boulevard', '11113333', 'help@bose.com');
 
 -- Derefter leveranser
 -- De første 10 dage af 2023.
