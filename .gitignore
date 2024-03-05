@@ -3,4 +3,5 @@
 *.fls
 *.gz
 *.log
+*.toc
 __pycache__
