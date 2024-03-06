@@ -1,7 +1,3 @@
-SELECT *, value
-FROM SALE_OF_PRODUCT
-WHERE VALUE = (SELECT MAX(value) FROM SALE_OF_PRODUCT)
-
-SELECT *
-FROM SALE_OF_PRODUCT
-WHERE value >= ALL (SELECT value FROM SALE_OF_PRODUCT)
+SELECT saleid, value*quantity
+FROM sale_of_product 
+WHERE value*quantity = (SELECT MAX(value*quantity) from sale_of_product);
