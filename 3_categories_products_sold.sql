@@ -1,3 +1,3 @@
-SELECT CategoryID, SUM(Quantity)
-FROM PRODUCT_CATEGORY NATURAL JOIN SALE_OF_PRODUCT
-GROUP BY CategoryID;
+SELECT categoryid, sum(quantity) 
+FROM sale_of_product NATURAL JOIN product
+GROUP BY categoryid;
