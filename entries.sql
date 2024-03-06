@@ -4,8 +4,7 @@ INSERT INTO PRODUCT_CATEGORY (CategoryID, Name, Description) VALUES
 (1, 'Phones', 'phones anď phone accesories'),
 (2, 'Laptops', 'laptops to take work with you on the go'),
 (3, 'Tablets', 'who uses this shet. artists?'),
-(5, 'Audio and Picture', 'sound equipment, and picture equipment'),
-(6, 'Photo', 'cameras and photo accessories'),
+(5, 'Audio', 'audio equipment'),
 (7, 'Gaming', 'consoles, games, and VR'),
 (8, 'Networking', 'notworking devices');
 
@@ -29,92 +28,147 @@ INSERT INTO PRODUCT (ProductID, CategoryID, Productname, Description) VALUES
 (5, 5, 'Sony WH-1000XM4', 'on-ear nc headphones'),
 (23 , 5, 'Sony WF-1000XM5', 'in-ear nc headphones'),
 (24, 5, 'Bose Noice Canceling 700', 'on-ear nc headphones'),
-(6, 6, 'Canon EOS', '8k recording'),
 (7, 7, 'Nintendo Switch', 'portable gaming console'),
-(25, 7, 'Xbox Elite Series 2', 'xbox controller'),
-(26, 7, 'Razer Cobra Pro', 'wireless gaming mouse'),
+(25, 7, 'Nintendo Controller', 'controller for nintendo'),
+(26, 7, 'ASUS mouse', 'wireless gaming mouse'),
 (8, 8, 'Netgear Nighthawk', 'wi-fi 6 router');
 
 -- Indsæt først levenrandør
 INSERT INTO SUPPLIER (SupplierVAT, SupplierName, Address, Phone, Email) VALUES
-(200001, 'Samsung Electronics', 'Samsung Town', '11111111', 'contact@samsung.com'),
-(200002, 'ASUS Global', 'ASUS Blvd', '22222222', 'support@asus.com'),
-(200003, 'Apple Inc.', 'Apple Park Way, Cupertino', '33333333', 'help@apple.com'),
-(200004, 'Garmin Ltd.', 'Garmin HQ', '44444444', 'service@garmin.com'),
-(200005, 'Sony Corporation', 'Sony City', '55555555', 'info@sony.com'),
-(200006, 'Canon Inc.', 'Canon Towers', '66666666', 'contact@canon.com'),
-(200007, 'Nintendo Co., Ltd.', 'Nintendo HQ', '77777777', 'support@nintendo.com'),
-(200008, 'Netgear, Inc.', 'Netgear Way', '88888888', 'help@netgear.com'),
-(200009, 'Anker Innovations', 'Anker St', '99999999', 'support@anker.com'),
-(200010, 'Dyson Ltd.', 'Dyson Campus', '00000000', 'contact@dyson.com'),
-(200011, 'Lenovo Inc', 'Lenovo Way', '11112222', 'message@lenovo.com'),
-(200012, 'Bose Inc', 'Bose Boulevard', '11113333', 'help@bose.com');
+(21, 'Samsung Electronics', 'Samsung Town', '11111111', 'contact@samsung.com'),
+(22, 'ASUS Global', 'ASUS Blvd', '22222222', 'support@asus.com'),
+(23, 'Apple Inc.', 'Apple Park Way, Cupertino', '33333333', 'help@apple.com'),
+(25, 'Sony Corporation', 'Sony City', '55555555', 'info@sony.com'),
+(27, 'Nintendo Co., Ltd.', 'Nintendo HQ', '77777777', 'support@nintendo.com'),
+(28, 'Netgear, Inc.', 'Netgear Way', '88888888', 'help@netgear.com'),
+(30, 'Lenovo Inc', 'Lenovo Way', '11112222', 'message@lenovo.com'),
+(31, 'Bose Inc', 'Bose Boulevard', '11113333', 'help@bose.com');
 
 -- Derefter leveranser
 INSERT INTO SUPPLY (InvoiceID, SupplierVAT, Date) VALUES
-(1001, 200001, '2022-01-01'),
-(1002, 200002, '2022-01-02'),
-(1003, 200003, '2022-01-03'),
-(1004, 200004, '2022-01-04'),
-(1005, 200005, '2022-01-05'),
-(1006, 200006, '2022-01-06'),
-(1007, 200007, '2022-01-07'),
-(1008, 200008, '2022-01-08'),
-(1009, 200009, '2022-01-09'),
-(1010, 200010, '2022-01-10'),
-(1011, 200001, '2022-03-01'),
-(1012, 200003, '2022-04-01'),
-(1013, 200005, '2022-05-01'),
-(1014, 200007, '2022-06-01'),
-(1015, 200009, '2022-07-01'),
-(1016, 200011, '2022-08-01'),
-(1017, 200002, '2022-09-01'),
-(1018, 200004, '2022-10-01'),
-(1019, 200006, '2022-11-01'),
-(1020, 200008, '2022-12-01');
+-- Telefoner leveret
+(11, 21, '2022-01-01'),
+(12, 23, '2022-01-01'),
+(13, 23, '2022-01-01'),
+(14, 23, '2022-01-01'),
+(15, 21, '2022-01-01'),
+(16, 21, '2022-01-01'),
+-- Laptops leveret
+(17, 22, '2022-01-01'),
+(18, 23, '2022-01-01'),
+(19, 30, '2022-01-01'),
+(20, 30, '2022-01-01'),
+(21, 21, '2022-01-01'),
+--  Tablets leveret
+(22, 23, '2022-01-01'),
+(23, 23, '2022-01-01'),
+(24, 21, '2022-01-01'),
+(25, 30, '2022-01-01'),
+-- Lyd udstyr leveret
+(26, 25, '2022-01-01'),
+(27, 25, '2022-01-01'),
+(28, 31, '2022-01-01'),
+-- Gaming udstyr leveret
+(29, 27, '2022-01-01'),
+(30, 27, '2022-01-01'),
+(31, 22, '2022-01-01'),
+(32, 28, '2022-01-01');
 
 -- lager leveranser
 -- Indsæt efter product og supply.
 INSERT INTO PRODUCT_SUPPLY (InvoiceID, ProductID, Quantity, Value) VALUES
-(1001, 1, 100, 50000),
-(1002, 2, 50, 80000),
-(1003, 3, 75, 40000),
-(1005, 5, 120, 30000),
-(1006, 6, 60, 60000),
-(1007, 7, 200, 50000),
-(1008, 8, 90, 20000),
-(1011, 1, 100, 700),
-(1012, 11, 50, 800),
-(1013, 5, 75, 350),
-(1014, 7, 100, 300),
-(1015, 23, 50, 200),
-(1016, 16, 40, 1200),
-(1017, 2, 60, 1500),
-(1019, 6, 80, 1000),
-(1020, 8, 90, 500);
+-- Telefoner 25 styk af 700,-
+(11, 1, 25, 700),
+(12, 11, 25, 700),
+(13, 12, 25, 700),
+(14, 13, 25, 700),
+(15, 14, 25, 700),
+(16, 15, 25, 700),
+-- Laptops 10 styk af 1700,-
+(17, 2, 10, 1700),
+(18, 16, 10, 1700),
+(19, 17, 10, 1700),
+(20, 18, 10, 1700),
+(21, 19, 10, 1700),
+-- Tablets 5 styk af 600,-
+(22, 3, 5, 600),
+(23, 20, 5, 600),
+(24, 21, 5, 600),
+(25, 22, 5, 600),
+-- Lyd 5 styk af 300,-
+(26, 5, 15, 300),
+(27, 23, 15, 300),
+(28, 24, 15, 300),
+-- Gaming 12 styk
+(29, 7, 12, 500),
+(30, 25, 12, 250),
+(31, 26, 12, 200),
+-- Netværk 30 styk af 15,-
+(32, 8, 30, 150);
 
 -- februar 2023.
 INSERT INTO SALE (SaleID, Date) VALUES
-(3001, '2022-02-14'),
-(3002, '2022-03-17'),
-(3003, '2022-04-30'),
-(3004, '2022-05-29'),
-(3005, '2022-06-18'),
-(3006, '2022-07-22'),
-(3007, '2022-08-15'),
-(3008, '2022-09-05'),
-(3009, '2022-10-31'),
-(3010, '2022-11-25'),
-(3011, '2022-12-20');
+-- Telefoner solgt i første halvår
+(50, '2022-01-03'),
+(51, '2022-03-03'),
+(52, '2022-04-03'),
+(53, '2022-05-03'),
+(54, '2022-06-03'),
+(55, '2022-07-03'),
+
+-- Laptops solgt i først 3 kvartaler
+(57, '2022-01-25'),
+(58, '2022-02-25'),
+(59, '2022-03-25'),
+(60, '2022-04-25'),
+(61, '2022-05-25'),
+(62, '2022-06-25'),
+(63, '2022-07-25'),
+(64, '2022-08-25'),
+(65, '2022-09-25'),
+
+-- Tablets solgt i sidste halvår
+(66, '2022-07-25'),
+(67, '2022-08-25'),
+(68, '2022-09-25'),
+(69, '2022-10-25'),
+(70, '2022-11-25'),
+(71, '2022-12-25');
 
 INSERT INTO SALE_OF_PRODUCT (SaleID, ProductID, Quantity, Value) VALUES
-(3001, 1, 20, 14000),
-(3002, 2, 15, 22500),
-(3003, 5, 25, 8750),
-(3004, 7, 30, 9000),
-(3005, 23, 20, 4000),
-(3006, 16, 10, 12000),
-(3007, 14, 8, 9600),
-(3008, 11, 15, 12000),
-(3010, 6, 25, 25000),
-(3011, 8, 35, 17500);
+-- Telefoner solgt
+(50, 1, 5, 1000),
+(51, 11, 3, 2000),
+(52, 14, 8, 1200),
+(53, 1, 3, 1000),
+(54, 13, 2, 800),
+(55, 12, 1, 2500),
+-- Laptops solgt
+(57, 2, 5, 2700),
+(58, 16, 2, 3000),
+(59, 17, 8, 3500),
+(60, 17, 1, 3500),
+(61, 19, 3, 2400),
+(62, 16, 1, 3000),
+(63, 2, 2, 2700),
+(64, 17, 2, 3500),
+(65, 19, 3, 2400),
+-- Tablets solgt
+(66, 3, 2, 1500),
+(67, 20, 6, 1100),
+(68, 21, 3, 1200),
+(69, 3, 3, 1500),
+(70, 20, 1, 1100),
+(71, 21, 2, 1200);
+
+INSERT INTO PRODUCT_RETURN (SaleID, ProductID, Date, Quantity) VALUES
+-- Returner telefoner
+(50, 1, '2022-02-03', 3),
+(52, 14, '2022-05-03', 8),
+(55, 12, '2022-08-03', 1),
+-- Returner laptops
+(57, 2, '2022-02-25', 4),
+(61, 17, '2022-06-25', 3),
+
+-- Returner tablets
+(67, 20, '2022-09-25', 4);
