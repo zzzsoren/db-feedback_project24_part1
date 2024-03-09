@@ -1,29 +1,39 @@
 \section{Introduction}
 The goal of this project is get hands-on experience setting up a database in PostgreSQL and
-looking up data in it. Furthermore the purpose is about to get feedback. The report
-reflects and documents the work carried out by us \texttt(Denis and Søren) in the project.
+looking up data in it. Furthermore the purpose is about us getting feedback as early in the course as possible. 
+The report reflects and documents the work carried out by us \textit{(Denis and Søren)} in the project.
 
 \subsection{Formulation of the problem}
-Create a database and insert data, then query the data.
+Create a database and insert data, then query data.
 
 \subsection{Requirements}
 The database should be deployed in PostgreSQL with appropriate commands
-to create the tables, by taking into account and enforcing all the integrity constants.
-
-About 5-10 records in each table.
-
-
+to create the tables, by taking into account and enforcing all the integrity constants. About 5-10 records in each table.
 \bigbreak
 The schema to be implemented is as follows:\\
-\texttt{PRODUCT(ProductID, CategoryID, ProductName, Description)}\\
-\texttt{PRODUCT\_CATEGORY(CategoryID, Name, Description)}\\
-\texttt{SUPPLIER(SupplierVAT, SupplierName, Address, Phone, Email)}\\
-\texttt{SUPPLY(InvoiceID, SupplierVAT, Date)}\\
-\texttt{PRODUCT\_SUPPLY(InvoiceID, ProductID, Quantity, Value)}\\
-\texttt{SALE(SaleID, Date)}\\
-\texttt{SALE\_OF\_PRODUCT(SaleID, ProductID, Quantity, Value)}\\
-\texttt{PRODUCT\_RETURN(SaleID, ProductID, Date, Quantity)}\\
-\texttt{STOCK(ProductID, Quantity)}\\
+\begin{itemize}
+    \item \texttt{PRODUCT(ProductID, CategoryID, ProductName, Description)}\\
+    Information about a product. A product is assoiciated only with a single category
+    to fullfill the assignment decription.
+    \item \texttt{PRODUCT\_CATEGORY(CategoryID, Name, Description)}\\
+    The category is the type of the product.
+    \item \texttt{SUPPLIER(SupplierVAT, SupplierName, Address, Phone, Email)}\\
+    A supplier supplies the products to a retail store.
+    \item \texttt{SUPPLY(InvoiceID, SupplierVAT, Date)}\\
+    Relationship between the supplier, the supplied products and the date og supplying.
+    \item \texttt{PRODUCT\_SUPPLY(InvoiceID, ProductID, Quantity, Value)}\\
+    Product that has been supplied by the supplier.
+    The price is what the store pay the supplier pr. unit.
+    \item \texttt{SALE(SaleID, Date)}\\
+    A sale is between retail and their customers. We interpret this as 
+    a sale that could be any combination of the products in stock.
+    \item \texttt{SALE\_OF\_PRODUCT(SaleID, ProductID, Quantity, Value)}\\
+    The price is what customer pay pr. unit of a particular product.
+    \item \texttt{PRODUCT\_RETURN(SaleID, ProductID, Date, Quantity)}\\
+    A costumer can return the products to the store that they've bought if they're unhappy.
+    \item \texttt{STOCK(ProductID, Quantity)}\\
+    The stock is the total 
+\end{itemize}
 
 
 
